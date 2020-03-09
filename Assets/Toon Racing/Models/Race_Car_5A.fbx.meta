@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 1ce33a5fc4a9d439fb1d67b47d1ac767
+timeCreated: 1503004333
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Race_Car_5A_Body
+    100004: Suspension_5A_F.L
+    100006: Suspension_5A_F.R
+    100008: Suspension_5A_R.L
+    100010: Suspension_5A_R.R
+    100012: Wheel_5A_F.L
+    100014: Wheel_5A_F.R
+    100016: Wheel_5A_R.L
+    100018: Wheel_5A_R.R
+    100020: Wheel_Pivot_5A_F.L
+    100022: Wheel_Pivot_5A_F.R
+    100024: Wheel_Pivot_5A_R.L
+    100026: Wheel_Pivot_5A_R.R
+    100028: Race_Car_5A_Front_Wing
+    100030: Race_Car_5A_Mirror.L
+    100032: Race_Car_5A_Mirror.R
+    100034: Race_Car_5A_Nose
+    100036: Race_Car_5A_Rear_Wing
+    100038: Race_Car_5A_Body_Livery
+    100040: Race_Car_5A_Front_Wing_Livery
+    100042: Race_Car_5A_Nose_Livery
+    100044: Race_Car_5A_Rear_Wing.002
+    100046: Race_Car_5A_Rear_Wing_Livery
+    100048: Driver_5A
+    100050: Helmet_5A
+    100052: Steering_Wheel_5A
+    400000: //RootNode
+    400002: Race_Car_5A_Body
+    400004: Suspension_5A_F.L
+    400006: Suspension_5A_F.R
+    400008: Suspension_5A_R.L
+    400010: Suspension_5A_R.R
+    400012: Wheel_5A_F.L
+    400014: Wheel_5A_F.R
+    400016: Wheel_5A_R.L
+    400018: Wheel_5A_R.R
+    400020: Wheel_Pivot_5A_F.L
+    400022: Wheel_Pivot_5A_F.R
+    400024: Wheel_Pivot_5A_R.L
+    400026: Wheel_Pivot_5A_R.R
+    400028: Race_Car_5A_Front_Wing
+    400030: Race_Car_5A_Mirror.L
+    400032: Race_Car_5A_Mirror.R
+    400034: Race_Car_5A_Nose
+    400036: Race_Car_5A_Rear_Wing
+    400038: Race_Car_5A_Body_Livery
+    400040: Race_Car_5A_Front_Wing_Livery
+    400042: Race_Car_5A_Nose_Livery
+    400044: Race_Car_5A_Rear_Wing.002
+    400046: Race_Car_5A_Rear_Wing_Livery
+    400048: Driver_5A
+    400050: Helmet_5A
+    400052: Steering_Wheel_5A
+    2300000: Race_Car_5A_Body
+    2300002: Suspension_5A_F.L
+    2300004: Suspension_5A_F.R
+    2300006: Suspension_5A_R.L
+    2300008: Suspension_5A_R.R
+    2300010: Wheel_5A_F.L
+    2300012: Wheel_5A_F.R
+    2300014: Wheel_5A_R.L
+    2300016: Wheel_5A_R.R
+    2300018: Wheel_Pivot_5A_F.L
+    2300020: Wheel_Pivot_5A_F.R
+    2300022: Wheel_Pivot_5A_R.L
+    2300024: Wheel_Pivot_5A_R.R
+    2300026: Race_Car_5A_Front_Wing
+    2300028: Race_Car_5A_Mirror.L
+    2300030: Race_Car_5A_Mirror.R
+    2300032: Race_Car_5A_Nose
+    2300034: Race_Car_5A_Rear_Wing
+    2300036: Race_Car_5A_Body_Livery
+    2300038: Race_Car_5A_Front_Wing_Livery
+    2300040: Race_Car_5A_Nose_Livery
+    2300042: Race_Car_5A_Rear_Wing.002
+    2300044: Race_Car_5A_Rear_Wing_Livery
+    2300046: Driver_5A
+    2300048: Helmet_5A
+    2300050: Steering_Wheel_5A
+    3300000: Race_Car_5A_Body
+    3300002: Suspension_5A_F.L
+    3300004: Suspension_5A_F.R
+    3300006: Suspension_5A_R.L
+    3300008: Suspension_5A_R.R
+    3300010: Wheel_5A_F.L
+    3300012: Wheel_5A_F.R
+    3300014: Wheel_5A_R.L
+    3300016: Wheel_5A_R.R
+    3300018: Wheel_Pivot_5A_F.L
+    3300020: Wheel_Pivot_5A_F.R
+    3300022: Wheel_Pivot_5A_R.L
+    3300024: Wheel_Pivot_5A_R.R
+    3300026: Race_Car_5A_Front_Wing
+    3300028: Race_Car_5A_Mirror.L
+    3300030: Race_Car_5A_Mirror.R
+    3300032: Race_Car_5A_Nose
+    3300034: Race_Car_5A_Rear_Wing
+    3300036: Race_Car_5A_Body_Livery
+    3300038: Race_Car_5A_Front_Wing_Livery
+    3300040: Race_Car_5A_Nose_Livery
+    3300042: Race_Car_5A_Rear_Wing.002
+    3300044: Race_Car_5A_Rear_Wing_Livery
+    3300046: Driver_5A
+    3300048: Helmet_5A
+    3300050: Steering_Wheel_5A
+    4300000: Wheel_Pivot_5A_R.R
+    4300002: Suspension_5A_R.R
+    4300004: Wheel_Pivot_5A_R.L
+    4300006: Suspension_5A_F.R
+    4300008: Wheel_Pivot_5A_F.R
+    4300010: Suspension_5A_R.L
+    4300012: Race_Car_5A_Body
+    4300014: Wheel_5A_R.L
+    4300016: Wheel_5A_F.R
+    4300018: Wheel_5A_R.R
+    4300020: Suspension_5A_F.L
+    4300022: Wheel_Pivot_5A_F.L
+    4300024: Wheel_5A_F.L
+    4300026: Race_Car_5A_Mirror.L
+    4300028: Race_Car_5A_Mirror.R
+    4300030: Race_Car_5A_Rear_Wing
+    4300032: Race_Car_5A_Nose
+    4300034: Race_Car_5A_Front_Wing
+    4300036: Race_Car_5A_Rear_Wing.002
+    4300038: Race_Car_5A_Rear_Wing_Livery
+    4300040: Race_Car_5A_Nose_Livery
+    4300042: Race_Car_5A_Front_Wing_Livery
+    4300044: Race_Car_5A_Body_Livery
+    4300046: Driver_5A
+    4300048: Helmet_5A
+    4300050: Steering_Wheel_5A
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,156 @@
+fileFormatVersion: 2
+guid: 6ed0208f3808246f690c40c973118283
+timeCreated: 1501175442
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Wheel_2A_F.L.001
+    100004: Wheel_2A_F.R.001
+    100006: Wheel_2A_R.L.001
+    100008: Wheel_2A_R.R.001
+    100010: Body_Kit.001
+    100012: Wheel_3A_F.L
+    100014: Wheel_3A_F.R
+    100016: Wheel_3A_R.L
+    100018: Wheel_3A_R.R
+    100020: Livery_3A
+    100022: Rally_Car_3A_Diffuser
+    100024: Rally_Car_3A_Front_Skirt
+    100026: Rally_Car_3A_Lights
+    100028: Rally_Car_3A_Side_Skirts
+    100030: Rally_Car_3A_Spoiler
+    100032: Rally_Car_3A_Livery
+    400000: //RootNode
+    400002: Wheel_2A_F.L.001
+    400004: Wheel_2A_F.R.001
+    400006: Wheel_2A_R.L.001
+    400008: Wheel_2A_R.R.001
+    400010: Body_Kit.001
+    400012: Wheel_3A_F.L
+    400014: Wheel_3A_F.R
+    400016: Wheel_3A_R.L
+    400018: Wheel_3A_R.R
+    400020: Livery_3A
+    400022: Rally_Car_3A_Diffuser
+    400024: Rally_Car_3A_Front_Skirt
+    400026: Rally_Car_3A_Lights
+    400028: Rally_Car_3A_Side_Skirts
+    400030: Rally_Car_3A_Spoiler
+    400032: Rally_Car_3A_Livery
+    2300000: //RootNode
+    2300002: Wheel_2A_F.L.001
+    2300004: Wheel_2A_F.R.001
+    2300006: Wheel_2A_R.L.001
+    2300008: Wheel_2A_R.R.001
+    2300010: Body_Kit.001
+    2300012: Wheel_3A_F.L
+    2300014: Wheel_3A_F.R
+    2300016: Wheel_3A_R.L
+    2300018: Wheel_3A_R.R
+    2300020: Livery_3A
+    2300022: Rally_Car_3A_Diffuser
+    2300024: Rally_Car_3A_Front_Skirt
+    2300026: Rally_Car_3A_Lights
+    2300028: Rally_Car_3A_Side_Skirts
+    2300030: Rally_Car_3A_Spoiler
+    2300032: Rally_Car_3A_Livery
+    3300000: //RootNode
+    3300002: Wheel_2A_F.L.001
+    3300004: Wheel_2A_F.R.001
+    3300006: Wheel_2A_R.L.001
+    3300008: Wheel_2A_R.R.001
+    3300010: Body_Kit.001
+    3300012: Wheel_3A_F.L
+    3300014: Wheel_3A_F.R
+    3300016: Wheel_3A_R.L
+    3300018: Wheel_3A_R.R
+    3300020: Livery_3A
+    3300022: Rally_Car_3A_Diffuser
+    3300024: Rally_Car_3A_Front_Skirt
+    3300026: Rally_Car_3A_Lights
+    3300028: Rally_Car_3A_Side_Skirts
+    3300030: Rally_Car_3A_Spoiler
+    3300032: Rally_Car_3A_Livery
+    4300000: Rally_Car_3A
+    4300002: Wheel_2A_F.L.001
+    4300004: Wheel_2A_R.L.001
+    4300006: Wheel_2A_R.R.001
+    4300008: Wheel_2A_F.R.001
+    4300010: Body_Kit.001
+    4300012: Wheel_3A_F.R
+    4300014: Wheel_3A_R.R
+    4300016: Wheel_3A_R.L
+    4300018: Wheel_3A_F.L
+    4300020: Rally_Car_3A_Lights
+    4300022: Livery_3A
+    4300024: Rally_Car_3A_Spoiler
+    4300026: Rally_Car_3A_Side_Skirts
+    4300028: Rally_Car_3A_Diffuser
+    4300030: Rally_Car_3A_Front_Skirt
+    4300032: Rally_Car_3A_Livery
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

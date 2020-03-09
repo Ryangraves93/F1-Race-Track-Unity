@@ -1,0 +1,196 @@
+fileFormatVersion: 2
+guid: 335bec568474f4298868875cfef10fbd
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Monster_Truck_11A.001
+    100002: Monster_Truck_11A.002
+    100004: //RootNode
+    100006: Wheel_11A_F.L.001
+    100008: Wheel_11A_F.R.001
+    100010: Wheel_11A_R.L.001
+    100012: Wheel_11A_R.R.001
+    100014: Wheel_11A_F.R.002
+    100016: Wheel_11A_F.R.003
+    100018: Wheel_11A_F.R.004
+    100020: Monster_Truck_12A_Livery
+    100022: Wheel_12A_F.L
+    100024: Wheel_12A_F.R
+    100026: Wheel_12A_R.L
+    100028: Wheel_12A_R.R
+    100030: Monster_Truck_12A_Body
+    100032: Monster_Truck_12A_Suspension.F.L
+    100034: Monster_Truck_12A_Suspension.F.R
+    100036: Monster_Truck_12A_Suspension.R.L
+    100038: Monster_Truck_12A_Suspension.R.R
+    400000: Monster_Truck_11A.001
+    400002: Monster_Truck_11A.002
+    400004: //RootNode
+    400006: Wheel_11A_F.L.001
+    400008: Wheel_11A_F.R.001
+    400010: Wheel_11A_R.L.001
+    400012: Wheel_11A_R.R.001
+    400014: Wheel_11A_F.R.002
+    400016: Wheel_11A_F.R.003
+    400018: Wheel_11A_F.R.004
+    400020: Monster_Truck_12A_Livery
+    400022: Wheel_12A_F.L
+    400024: Wheel_12A_F.R
+    400026: Wheel_12A_R.L
+    400028: Wheel_12A_R.R
+    400030: Monster_Truck_12A_Body
+    400032: Monster_Truck_12A_Suspension.F.L
+    400034: Monster_Truck_12A_Suspension.F.R
+    400036: Monster_Truck_12A_Suspension.R.L
+    400038: Monster_Truck_12A_Suspension.R.R
+    2300000: Monster_Truck_11A.001
+    2300002: Monster_Truck_11A.002
+    2300004: Wheel_11A_F.L.001
+    2300006: Wheel_11A_F.R.001
+    2300008: Wheel_11A_R.L.001
+    2300010: Wheel_11A_R.R.001
+    2300012: Wheel_11A_F.R.002
+    2300014: Wheel_11A_F.R.003
+    2300016: Wheel_11A_F.R.004
+    2300018: //RootNode
+    2300020: Monster_Truck_12A_Livery
+    2300022: Wheel_12A_F.L
+    2300024: Wheel_12A_F.R
+    2300026: Wheel_12A_R.L
+    2300028: Wheel_12A_R.R
+    2300030: Monster_Truck_12A_Body
+    2300032: Monster_Truck_12A_Suspension.F.L
+    2300034: Monster_Truck_12A_Suspension.F.R
+    2300036: Monster_Truck_12A_Suspension.R.L
+    2300038: Monster_Truck_12A_Suspension.R.R
+    3300000: Monster_Truck_11A.001
+    3300002: Monster_Truck_11A.002
+    3300004: Wheel_11A_F.L.001
+    3300006: Wheel_11A_F.R.001
+    3300008: Wheel_11A_R.L.001
+    3300010: Wheel_11A_R.R.001
+    3300012: Wheel_11A_F.R.002
+    3300014: Wheel_11A_F.R.003
+    3300016: Wheel_11A_F.R.004
+    3300018: //RootNode
+    3300020: Monster_Truck_12A_Livery
+    3300022: Wheel_12A_F.L
+    3300024: Wheel_12A_F.R
+    3300026: Wheel_12A_R.L
+    3300028: Wheel_12A_R.R
+    3300030: Monster_Truck_12A_Body
+    3300032: Monster_Truck_12A_Suspension.F.L
+    3300034: Monster_Truck_12A_Suspension.F.R
+    3300036: Monster_Truck_12A_Suspension.R.L
+    3300038: Monster_Truck_12A_Suspension.R.R
+    4300000: Monster_Truck_11A.002
+    4300002: Monster_Truck_11A.001
+    4300004: Wheel_11A_F.L.001
+    4300006: Wheel_11A_F.R.001
+    4300008: Wheel_11A_R.L.001
+    4300010: Wheel_11A_R.R.001
+    4300012: Wheel_11A_F.R.004
+    4300014: Wheel_11A_F.R.003
+    4300016: Wheel_11A_F.R.002
+    4300018: Monster_Truck_12A
+    4300020: Monster_Truck_12A_Livery
+    4300022: Wheel_12A_F.L
+    4300024: Wheel_12A_R.L
+    4300026: Wheel_12A_R.R
+    4300028: Wheel_12A_F.R
+    4300030: Monster_Truck_12A_Suspension.F.L
+    4300032: Monster_Truck_12A_Suspension.F.R
+    4300034: Monster_Truck_12A_Suspension.R.L
+    4300036: Monster_Truck_12A_Suspension.R.R
+    4300038: Monster_Truck_12A_Body
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Monster_Truck_12A_D
+    second: {fileID: 2100000, guid: 856ff4ff701b54681a1e0cd82d377b0d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
