@@ -8,11 +8,15 @@ namespace PathCreation.Examples
     public class PathFollower : MonoBehaviour
     {
         public PathCreator pathCreator;
+        public PathCreator pitStop;
+
         public EndOfPathInstruction endOfPathInstruction;
-        public float speed = 5;
+        public float speed;
         float distanceTravelled;
         public float timeToStart;
+
         private bool readyToGo = false;
+        private bool pitStopping = false;
 
         void Start()
         {
@@ -28,14 +32,20 @@ namespace PathCreation.Examples
 
         void Update()
         {
+            Debug.Log(pitStopping);
             if (readyToGo == true)
             {
-
                 if (pathCreator != null)
                 {
-                    distanceTravelled += speed * Time.deltaTime;
-                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
-                    transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
+                    if (pitStopping == false)
+                    {
+                        LoopTrack();
+                    }
+
+                    else if (pitStopping == true)
+                    {
+                        stopping();
+                    }
                 }
             }
         }
@@ -44,6 +54,34 @@ namespace PathCreation.Examples
         // is as close as possible to its position on the old path
         void OnPathChanged() {
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
+        }
+
+        void LoopTrack()
+        {
+            speed = 60f;
+            distanceTravelled += speed * Time.deltaTime;
+            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
+            transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
+        }
+
+        void stopping()
+        {
+            distanceTravelled += speed * Time.deltaTime;
+            transform.position = pitStop.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
+            transform.rotation = pitStop.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
+            speed -= .8f;
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Pit Stop Start"))
+            {
+                pitStopping = true;
+            }
+            else if (other.CompareTag("Pit Stop Finish"))
+            {
+                pitStopping = false;
+            }
         }
 
         public IEnumerator carReady()

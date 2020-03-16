@@ -7,8 +7,10 @@ using UnityEngine;
 public class WheelRotator : MonoBehaviour
 {
 
-    public Quaternion frontWheelRight, frontWheelLeft;
+    public Transform frontWheelRight, frontWheelLeft;
     public Transform rearWheelRight, rearWheelLeft;
+
+    public float wheelSpeed = 20f;
 
     // Start is called before the first frame update
     void Start()
@@ -19,11 +21,10 @@ public class WheelRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rotateWheels();
+        frontWheelLeft.Rotate(wheelSpeed,0,0);
+        frontWheelRight.Rotate(wheelSpeed, 0, 0);
+        rearWheelRight.Rotate(wheelSpeed, 0, 0);
+        rearWheelLeft.Rotate(wheelSpeed, 0, 0);
     }
 
-    void rotateWheels()
-    {
-        frontWheelLeft.x += .5f;
-    }
 }
