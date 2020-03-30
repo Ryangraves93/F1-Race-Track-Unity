@@ -34,11 +34,19 @@ public class LapController : MonoBehaviour
                 carHasPitstopped = false;
                 
             }
-            else if (carHasPitstopped == false && carToCheck.pitstopLap == false)
+            else 
             {
                 carToCheck.pitstopLap = false;        
             }   
 
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Car"))
+        {
+            carToCheck = null;
         }
     }
 }
