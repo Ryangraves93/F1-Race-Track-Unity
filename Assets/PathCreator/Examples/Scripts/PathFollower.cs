@@ -15,9 +15,14 @@ namespace PathCreation.Examples
         float distanceTravelled;
         public float timeToStart;
 
-        private bool readyToGo = false;
-        private bool pitStopping = false;
+        public int id;
 
+        public bool pitstopLap = false;
+        private bool readyToGo = false;
+  
+        /*  private bool pitStopping = false;
+        private bool stationary = false;
+*/
         void Start()
         {
             if (pathCreator != null)
@@ -32,20 +37,20 @@ namespace PathCreation.Examples
 
         void Update()
         {
-            Debug.Log(pitStopping);
+           
             if (readyToGo == true)
             {
                 if (pathCreator != null)
                 {
-                    if (pitStopping == false)
+                    if (pitstopLap == false)
                     {
                         LoopTrack();
                     }
-
-                    else if (pitStopping == true)
+                    else if (pitstopLap == true)
                     {
-                        stopping();
+                        pitstop();
                     }
+                
                 }
             }
         }
@@ -58,20 +63,19 @@ namespace PathCreation.Examples
 
         void LoopTrack()
         {
-            speed = 60f;
             distanceTravelled += speed * Time.deltaTime;
             transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
             transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
         }
 
-        void stopping()
+        void pitstop()
         {
             distanceTravelled += speed * Time.deltaTime;
             transform.position = pitStop.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
             transform.rotation = pitStop.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
-            speed -= .8f;
-        }
 
+        }
+/*
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Pit Stop Start"))
@@ -84,6 +88,15 @@ namespace PathCreation.Examples
             }
         }
 
+        public IEnumerator carStationary()
+        {
+            stationary = true;
+            Debug.Log("Stationary");
+            yield return new WaitForSeconds(3f);
+            stationary = false;
+            speed = 60f;
+            //stopping();
+        }*/
         public IEnumerator carReady()
         {
             yield return new WaitForSeconds(timeToStart);
