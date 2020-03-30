@@ -14,12 +14,15 @@ namespace PathCreation.Examples
         public float speed;
         float distanceTravelled;
         public float timeToStart;
-
         public int id;
+        public bool staionary = false;
 
         public bool pitstopLap = false;
+        [HideInInspector]
         private bool readyToGo = false;
-  
+        [HideInInspector]
+        public bool m_slowingDown = false;
+
         /*  private bool pitStopping = false;
         private bool stationary = false;
 */
@@ -37,7 +40,7 @@ namespace PathCreation.Examples
 
         void Update()
         {
-           
+
             if (readyToGo == true)
             {
                 if (pathCreator != null)
@@ -50,14 +53,15 @@ namespace PathCreation.Examples
                     {
                         pitstop();
                     }
-                
+
                 }
             }
         }
 
         // If the path changes during the game, update the distance travelled so that the follower's position on the new path
         // is as close as possible to its position on the old path
-        void OnPathChanged() {
+        void OnPathChanged()
+        {
             distanceTravelled = pathCreator.path.GetClosestDistanceAlongPath(transform.position);
         }
 
@@ -74,29 +78,25 @@ namespace PathCreation.Examples
             transform.position = pitStop.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
             transform.rotation = pitStop.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
 
-        }
-/*
-        private void OnTriggerEnter(Collider other)
-        {
-            if (other.CompareTag("Pit Stop Start"))
+            if (m_slowingDown == true)
             {
-                pitStopping = true;
-            }
-            else if (other.CompareTag("Pit Stop Finish"))
-            {
-                pitStopping = false;
+                speed -= .85f;
+                if (speed <= 0)
+                {
+                    speed = 0;
+                    m_slowingDown = false;
+                    StartCoroutine(carStationary());
+                }
             }
         }
 
         public IEnumerator carStationary()
         {
-            stationary = true;
-            Debug.Log("Stationary");
+            staionary = true;
             yield return new WaitForSeconds(3f);
-            stationary = false;
             speed = 60f;
-            //stopping();
-        }*/
+            staionary = false;
+        }
         public IEnumerator carReady()
         {
             yield return new WaitForSeconds(timeToStart);

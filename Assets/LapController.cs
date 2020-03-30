@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using PathCreation.Examples;
-public class PitstopScript : MonoBehaviour
+public class LapController : MonoBehaviour
 {
     PathFollower carToCheck;
-    public int id = 1;
+    //public int id = 1;
+
+    public bool carHasPitstopped = true;
     void Start()
     {
         
@@ -18,27 +20,25 @@ public class PitstopScript : MonoBehaviour
     }
 
 
-     public int OnTriggerEnter(Collider other)
+     public void OnTriggerEnter(Collider other)
     {
+       
         if(other.CompareTag("Car"))
         {
             carToCheck = other.GetComponent<PathFollower>();
-            Debug.Log(id);
-            if (carToCheck.id == this.id)
+           
+            if (carHasPitstopped == true)
             {
                 carToCheck.pitstopLap = true;
                 Debug.Log("Path changed to pitstop");
-                id++;
-                return id;
+                carHasPitstopped = false;
+                
             }
-            else
+            else if (carHasPitstopped == false && carToCheck.pitstopLap == false)
             {
-                carToCheck.pitstopLap = false;
-                return id;
+                carToCheck.pitstopLap = false;        
             }   
 
         }
-
-        return id; 
     }
 }
