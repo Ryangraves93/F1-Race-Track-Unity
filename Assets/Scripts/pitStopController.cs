@@ -19,7 +19,9 @@ public class pitStopController : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
+             
             m_carToCheck = other.GetComponent<PathFollower>();
+            m_carToCheck.m_carChecked = false;
 
             if (m_carToCheck.pitstopLap == true)
             {

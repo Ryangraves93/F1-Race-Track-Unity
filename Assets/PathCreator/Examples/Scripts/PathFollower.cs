@@ -16,6 +16,7 @@ namespace PathCreation.Examples
         public float timeToStart;
         public int id;
         public bool staionary = false;
+        public bool m_carChecked = false;
 
         public bool pitstopLap = false;
         [HideInInspector]
