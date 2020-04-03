@@ -1,37 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
+using PathCreation.Examples;
 public class CameraFollow : MonoBehaviour
 {
 
     public Transform[] carTarget;
-
-    public float smoothSpeed = 0.125f;
-    public Vector3 offset;
-
     int i = 0;
-    private void Update()
+    PathFollower target;
+
+    public GameObject clearShotRef;
+    CinemachineClearShot m_clearShot;
+
+    CinemachineVirtualCamera followCamera;
+
+    private void Start()
+    {
+        followCamera = gameObject.GetComponent<CinemachineVirtualCamera>();
+        target = carTarget[0].GetComponent<PathFollower>();
+        m_clearShot = clearShotRef.GetComponent<CinemachineClearShot>();
+    }
+     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (i == (carTarget.Length + 1))
+            target.isTarget = false;
+
+            if (i >= carTarget.Length)
             {
                 i = 0;
+                target = carTarget[i].gameObject.GetComponent<PathFollower>();
+                target.isTarget = true;
+                m_clearShot.LookAt = carTarget[i].transform;
+                followCamera.LookAt = carTarget[i].transform;
+                followCamera.Follow = carTarget[i].transform;
             }
             else
             {
                 i++;
+                target = carTarget[i].gameObject.GetComponent<PathFollower>();
+                target.isTarget = true;
+                m_clearShot.LookAt = carTarget[i].transform;
+                followCamera.LookAt = carTarget[i].transform;
+                followCamera.Follow = carTarget[i].transform;
             }
-            
         }
     }
     void LateUpdate()
     {
-        Vector3 desiredPosition = carTarget[i].position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
-        transform.position = carTarget[i].position + offset;
-
-        transform.LookAt(carTarget[i]);
+      
     }
 }

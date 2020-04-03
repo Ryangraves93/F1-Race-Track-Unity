@@ -15,12 +15,13 @@ namespace PathCreation.Examples
         float distanceTravelled;
         public float timeToStart;
         public int id;
+        public bool isTarget = false;
         public bool staionary = false;
         public bool m_carChecked = false;
 
         public bool pitstopLap = false;
         [HideInInspector]
-        private bool readyToGo = false;
+        public bool readyToGo = false;
         [HideInInspector]
         public bool m_slowingDown = false;
 

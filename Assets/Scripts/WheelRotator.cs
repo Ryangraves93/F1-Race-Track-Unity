@@ -22,13 +22,15 @@ public class WheelRotator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (pathRef.staionary == false)
+        if (pathRef.readyToGo == true)
         {
-            frontWheelLeft.Rotate(wheelSpeed, 0, 0);
-            frontWheelRight.Rotate(wheelSpeed, 0, 0);
-            rearWheelRight.Rotate(wheelSpeed, 0, 0);
-            rearWheelLeft.Rotate(wheelSpeed, 0, 0);
+            if (pathRef.staionary == false)
+            {
+                frontWheelLeft.Rotate(wheelSpeed, 0, 0);
+                frontWheelRight.Rotate(wheelSpeed, 0, 0);
+                rearWheelRight.Rotate(wheelSpeed, 0, 0);
+                rearWheelLeft.Rotate(wheelSpeed, 0, 0);
+            }
         }
     }
 
