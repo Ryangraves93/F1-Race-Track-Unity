@@ -30,7 +30,7 @@ public class LapController : MonoBehaviour
             if (carHasPitstopped == true && carToCheck.m_carChecked == false)
             {
                 Debug.Log(carToCheck.id + "car id before function");
-                CheckId(carToCheck.id);
+               // CheckId(carToCheck.id);
                 Debug.Log(carToCheck.id + "car id after function");  
             }
             else 
