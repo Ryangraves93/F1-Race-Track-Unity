@@ -4,33 +4,25 @@ using UnityEngine;
 using PathCreation.Examples;
 public class LapController : MonoBehaviour
 {
-    PathFollower carToCheck;
-    
-    public int lapId = 4;
-    public bool carHasPitstopped = true;
-    void Start()
-    {
-        
-    }
+    PathFollower carToCheck;//Empty variable that will be used to get information about the car colliding with triggers
 
-    // Update is called once per frame
-    void Update()
-    {
-        //Debug.Log(id);
-    }
+    public int lapId = 1; // Variable to determine which car will go on a pitstop lap
+    public bool carHasPitstopped = true; // Ensures that two cars do not pit stop at the same time
+ 
+
 
 
      public void OnTriggerEnter(Collider other)
     {
         
-        if(other.CompareTag("Car"))
+        if(other.CompareTag("Car")) //Checks if the collision is tagged with car
         {
-            carToCheck = other.GetComponent<PathFollower>();
+            carToCheck = other.GetComponent<PathFollower>();//Assigns empty variable to the car which it collided 
            
-            if (carHasPitstopped == true && carToCheck.m_carChecked == false)
+            if (carHasPitstopped == true && carToCheck.m_carChecked == false)//Checks 
             {
                 Debug.Log(carToCheck.id + "car id before function");
-               // CheckId(carToCheck.id);
+                CheckId(carToCheck.id);
                 Debug.Log(carToCheck.id + "car id after function");  
             }
             else 
@@ -45,7 +37,7 @@ public class LapController : MonoBehaviour
     {
         if (other.CompareTag("Car"))
         {
-            carToCheck = null;
+            carToCheck = null; //Emptys car variable so it can be reassigned and reused with another car
         }
     }
 
