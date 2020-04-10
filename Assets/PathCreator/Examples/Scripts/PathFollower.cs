@@ -10,6 +10,8 @@ namespace PathCreation.Examples
         public PathCreator pathCreator;
         public PathCreator pitStop;
 
+        public ParticleSystem dustEffect;
+
         public EndOfPathInstruction endOfPathInstruction;
         public float speed;
         float distanceTravelled;
@@ -47,8 +49,10 @@ namespace PathCreation.Examples
             {
                 if (pathCreator != null)
                 {
+                   
                     if (pitstopLap == false)
                     {
+                        
                         LoopTrack();
                     }
                     else if (pitstopLap == true)
@@ -95,14 +99,14 @@ namespace PathCreation.Examples
         public IEnumerator carStationary()
         {
             staionary = true;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(6f);
             speed = 60f;
             staionary = false;
         }
         public IEnumerator carReady()
         {
- 
             yield return new WaitForSeconds(timeToStart);
+            dustEffect.gameObject.SetActive(false);
             readyToGo = true;
         }
     }

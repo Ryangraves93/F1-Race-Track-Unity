@@ -5,7 +5,8 @@ using PathCreation.Examples;
 
 public class pitStopController : MonoBehaviour
 {
-
+    PitstopMeshController pitStopMeshController;
+    public bool pitCrewMove = false;
     PathFollower m_carToCheck; //Empty script variable that gets assigned when a car collides through the collider
 
     public GameObject lapControllerRef;//Reference to the lap controller object which is filled in the editor
@@ -13,6 +14,7 @@ public class pitStopController : MonoBehaviour
 
     private void Start()
     {
+        pitStopMeshController = GetComponent<PitstopMeshController>();
         lapController = lapControllerRef.GetComponent<LapController>(); //Assign the lapcontroller
     }
     private void OnTriggerEnter(Collider other) //Trigger to have the car stop for a pitstop
@@ -25,6 +27,8 @@ public class pitStopController : MonoBehaviour
 
             if (m_carToCheck.pitstopLap == true) //If the car is on a pitstoplap, will trigger a function to slow down the car
             {
+                pitStopMeshController.GetWheelPositions(other.gameObject);
+                pitCrewMove = true;
                 m_carToCheck.m_slowingDown = true;
                 lapController.carHasPitstopped = true;
             }
