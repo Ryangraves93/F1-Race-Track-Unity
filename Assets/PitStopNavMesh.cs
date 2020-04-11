@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using PathCreation.Examples;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor.Experimental.GraphView;
@@ -9,7 +10,7 @@ public class PitStopNavMesh : MonoBehaviour
 {
     public GameObject oldWheel, newWheel;
     public int id;
-    float smoothTime = 1.0f;
+    float smoothTime = 50f;
     NavMeshAgent navMeshAgent;
     Transform destination;
     public Quaternion facingCar = Quaternion.Euler(0, 90, 0);
@@ -18,9 +19,11 @@ public class PitStopNavMesh : MonoBehaviour
     bool running = true;
     private Animator anim;
     public Vector3 offSet;
+    [HideInInspector]
+    Vector3 origin;
     public PitstopMeshController pitStopMeshController;
-
-    
+    Transform m_target;
+    public bool test = false;
     Quaternion wheelRot;
     private void Start()
     {
@@ -28,11 +31,13 @@ public class PitStopNavMesh : MonoBehaviour
         anim = GetComponent<Animator>();
         pitStopMeshController = pitStopControllerRef.GetComponent<PitstopMeshController>();
         pitStopController = pitStopControllerRef.GetComponent<pitStopController>();
+
+        origin = transform.position;
     }
 
      void Update()
     {
-        
+        Test();
         if (pitStopController.pitCrewMove && running)
         {
             if (destination == null)
@@ -73,30 +78,59 @@ public class PitStopNavMesh : MonoBehaviour
              }
         Vector3 Direction = target.position - transform.position;
         wheelRot = Quaternion.LookRotation(Direction);
-        transform.rotation = Quaternion.Lerp(transform.rotation, wheelRot, Time.deltaTime * smoothTime);
+       
         Crouching(target);
         
     }
 
-    void Crouching(Transform target)
-    {
+    void Crouching(Transform target) { 
+        transform.rotation = Quaternion.Lerp(transform.rotation, wheelRot, Time.deltaTime* smoothTime);
         running = false;
         anim.SetBool("isCrouching", true);
         Debug.Log("Crouch ran");
         pitStopController.pitCrewMove = false;
         anim.SetBool("isRunning", false);
         pitStopController.pitCrewMove = false;
-       StartCoroutine(TireInteraction(target.gameObject));
+       StartCoroutine(TireInteraction(target.gameObject,target));
 
     }
 
-    IEnumerator TireInteraction(GameObject tire)
+    IEnumerator TireInteraction(GameObject tire,Transform target)
     {
         yield return new WaitForSeconds(.2f);
-        tire.SetActive(false);
-        oldWheel.SetActive(true);
-        yield return new WaitForSeconds(2f);
-        newWheel.SetActive(false);
-        tire.SetActive(true);
-    }    
+        if (oldWheel || newWheel != null)
+        {
+            tire.SetActive(false);
+            oldWheel.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            newWheel.SetActive(false);
+            tire.SetActive(true);
+        }    
+        anim.SetBool("isCrouching", false);
+        yield return new WaitForSeconds(3f);
+        transform.LookAt(target);
+        anim.SetBool("isWaving", true);
+        MoveToOrigin();
+    }
+
+    void Test()
+    {
+        if (test == true)
+        {
+            
+            test = false;
+            Debug.Log("Yeah");
+        }
+        
+    }
+    void MoveToOrigin()
+    {
+        anim.SetBool("isWalking", true);
+        navMeshAgent.SetDestination(origin);
+       
+        if (navMeshAgent.remainingDistance < 0.1f)
+        {
+            anim.SetBool("idle", true);
+        }
+    }
 }
