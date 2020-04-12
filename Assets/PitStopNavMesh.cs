@@ -22,15 +22,13 @@ public class PitStopNavMesh : MonoBehaviour
     public Vector3 offSet;
     [HideInInspector]
     Vector3 origin;
-    public PitstopMeshController pitStopMeshController;
     Transform m_target;
     public bool test = false;
     Quaternion wheelRot;
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animator>();
-        pitStopMeshController = pitStopControllerRef.GetComponent<PitstopMeshController>();
+        anim = GetComponent<Animator>();    
         pitStopController = pitStopControllerRef.GetComponent<pitStopController>();
 
         origin = transform.position;
@@ -45,26 +43,20 @@ public class PitStopNavMesh : MonoBehaviour
         }
         if (pitStopController.pitCrewMove && running)
         {
-            //idle = false;
-            if (destination == null)
-            {
-                GetDestination(pitStopMeshController.wheelPositions);
-            }
-            else if (destination != null)
-            {
+                GetDestination(pitStopController.wheelPositions);
                 StartCoroutine(RunToTarget(destination));
-            }
+            
         }
     
     }
 
     void GetDestination (Transform[] wheelPos)
     {
-        for (int i = 0; i <= pitStopMeshController.wheelPositions.Length; i++)
+        for (int i = 0; i <= pitStopController.wheelPositions.Length; i++)
         {
             if (id == i)
             {
-                destination = pitStopMeshController.wheelPositions[i];
+                destination = pitStopController.wheelPositions[i];
                 break;
             }
         }
@@ -116,7 +108,7 @@ public class PitStopNavMesh : MonoBehaviour
             tire.SetActive(false);
             oldWheel.SetActive(true);
             yield return new WaitForSeconds(2f);
-            newWheel.SetActive(false);
+            //newWheel.SetActive(false);
             tire.SetActive(true);
         }
         anim.SetBool("isCrouching", false);
