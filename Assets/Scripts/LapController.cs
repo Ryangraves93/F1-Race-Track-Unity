@@ -8,10 +8,6 @@ public class LapController : MonoBehaviour
 
     public int lapId = 1; // Variable to determine which car will go on a pitstop lap
     public bool carHasPitstopped = true; // Ensures that two cars do not pit stop at the same time
- 
-
-
-
      public void OnTriggerEnter(Collider other)
     {
         

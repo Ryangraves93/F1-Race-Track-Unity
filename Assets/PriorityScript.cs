@@ -22,7 +22,6 @@ public class PriorityScript : MonoBehaviour
     {
         if (other.CompareTag("Car") && other.GetComponent<PathFollower>().isTarget == true)
         {
-            Debug.Log("CUNT");
             followCam.gameObject.SetActive(false);
             cam.gameObject.SetActive(true);
         }

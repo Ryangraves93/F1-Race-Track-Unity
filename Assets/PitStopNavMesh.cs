@@ -17,6 +17,7 @@ public class PitStopNavMesh : MonoBehaviour
     public GameObject pitStopControllerRef;
     pitStopController pitStopController;
     bool running = true;
+    bool idle = true;
     private Animator anim;
     public Vector3 offSet;
     [HideInInspector]
@@ -37,16 +38,21 @@ public class PitStopNavMesh : MonoBehaviour
 
      void Update()
     {
-        Test();
+        //Debug.Log(pitStopController.pitCrewMove);
+        if (idle == true)
+        { 
+            Idle();
+        }
         if (pitStopController.pitCrewMove && running)
         {
+            //idle = false;
             if (destination == null)
             {
                 GetDestination(pitStopMeshController.wheelPositions);
             }
-            if (destination != null)
+            else if (destination != null)
             {
-                StartCoroutine(MovementState(destination));
+                StartCoroutine(RunToTarget(destination));
             }
         }
     
@@ -64,10 +70,18 @@ public class PitStopNavMesh : MonoBehaviour
         }
     }
 
-     IEnumerator MovementState(Transform target)
+    void Idle ()
     {
-        
+        anim.SetBool("isWalking", false);
+        anim.SetBool("idle", true);
+    }
+
+     IEnumerator RunToTarget(Transform target)
+    {
+        Debug.Log(target.gameObject.name);
+        anim.SetBool("idle", false);
         anim.SetBool("isRunning", true);
+        yield return new WaitForSeconds(.2f);
         navMeshAgent.SetDestination(target.position + offSet);
 
             float timeMoving = 0f;
@@ -84,12 +98,11 @@ public class PitStopNavMesh : MonoBehaviour
     }
 
     void Crouching(Transform target) { 
-        transform.rotation = Quaternion.Lerp(transform.rotation, wheelRot, Time.deltaTime* smoothTime);
+
+        //transform.rotation = Quaternion.Lerp(transform.rotation, wheelRot, Time.deltaTime* smoothTime);
         running = false;
-        anim.SetBool("isCrouching", true);
-        Debug.Log("Crouch ran");
-        pitStopController.pitCrewMove = false;
         anim.SetBool("isRunning", false);
+        anim.SetBool("isCrouching", true);       
         pitStopController.pitCrewMove = false;
        StartCoroutine(TireInteraction(target.gameObject,target));
 
@@ -105,32 +118,28 @@ public class PitStopNavMesh : MonoBehaviour
             yield return new WaitForSeconds(2f);
             newWheel.SetActive(false);
             tire.SetActive(true);
-        }    
+        }
         anim.SetBool("isCrouching", false);
         yield return new WaitForSeconds(3f);
         transform.LookAt(target);
         anim.SetBool("isWaving", true);
+        yield return new WaitForSeconds(1.6f);
+        anim.SetBool("isWaving", false);
+        anim.SetBool("isWalking", true);
+        yield return new WaitForSeconds(1f);
         MoveToOrigin();
     }
 
-    void Test()
-    {
-        if (test == true)
-        {
-            
-            test = false;
-            Debug.Log("Yeah");
-        }
-        
-    }
     void MoveToOrigin()
     {
-        anim.SetBool("isWalking", true);
-        navMeshAgent.SetDestination(origin);
-       
-        if (navMeshAgent.remainingDistance < 0.1f)
+        while (navMeshAgent.remainingDistance < 0.2f)
         {
-            anim.SetBool("idle", true);
+            navMeshAgent.SetDestination(origin);
         }
+            idle = true;
+            anim.SetBool("idle", true);
+            running = true;
+            pitStopController.pitCrewMove = false;
+            //pitStopController.cle
     }
 }

@@ -13,18 +13,30 @@ public class PitstopMeshController : MonoBehaviour
     Transform carRear;
 
     public Transform[] wheelPositions;
+    public bool test = false;
 
     private void Awake()
     {
         wheelPositions = new Transform[5];
     }
-    private void Update()
+     void Update()
     {
+
+        if (test == true)
+        {
+            Debug.Log("Cleared Variables");
+            ClearVariables();
+        }
         if (m_pathfollower != null)
         {
             if (m_pathfollower.staionary)
             {
                 AssignWheels();
+                Debug.Log(m_pathfollower);
+                if (m_pathfollower.staionary == false)
+                {
+                    ClearVariables();
+                }
             }
         }
     }
@@ -34,7 +46,7 @@ public class PitstopMeshController : MonoBehaviour
         {
             m_pathfollower = null;
         }
-        m_pathfollower = car.GetComponent<PathFollower>();  
+        m_pathfollower = car.GetComponent<PathFollower>();
     }
 
     void AssignWheels ()
@@ -50,11 +62,13 @@ public class PitstopMeshController : MonoBehaviour
         wheelPositions[2] = rearLeftWheel;
         wheelPositions[3] = rearRightWheel;
         wheelPositions[4] = carRear;
+
     }
 
     void ClearVariables()
     {
         m_pathfollower = null;
         wheelPositions = new Transform[5];
+        test = false;
     }
 }
