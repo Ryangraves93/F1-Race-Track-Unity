@@ -96,7 +96,7 @@ public class PitStopNavMesh : MonoBehaviour
         anim.SetBool("isRunning", false);
         anim.SetBool("isCrouching", true);       
         pitStopController.pitCrewMove = false;
-       StartCoroutine(TireInteraction(target.gameObject,target));
+        StartCoroutine(TireInteraction(target.gameObject,target));
 
     }
 
@@ -124,6 +124,8 @@ public class PitStopNavMesh : MonoBehaviour
 
     void MoveToOrigin()
     {
+        oldWheel.SetActive(false);
+        Quaternion.RotateTowards(transform.rotation, destination.rotation,90);
         while (navMeshAgent.remainingDistance < 0.2f)
         {
             navMeshAgent.SetDestination(origin);
@@ -132,6 +134,6 @@ public class PitStopNavMesh : MonoBehaviour
             anim.SetBool("idle", true);
             running = true;
             pitStopController.pitCrewMove = false;
-            //pitStopController.cle
+            
     }
 }
