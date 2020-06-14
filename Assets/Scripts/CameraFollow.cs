@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using PathCreation.Examples;
+
 public class CameraFollow : MonoBehaviour
 {
-
+    
     public Transform[] carTarget;
     int i = 0;
     PathFollower target;
@@ -18,9 +19,12 @@ public class CameraFollow : MonoBehaviour
     private void Start()
     {
         followCamera = gameObject.GetComponent<CinemachineVirtualCamera>();
+        
         target = carTarget[0].GetComponent<PathFollower>();
+        
         m_clearShot = clearShotRef.GetComponent<CinemachineClearShot>();
     }
+    
      void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -30,8 +34,11 @@ public class CameraFollow : MonoBehaviour
             if (i >= carTarget.Length)
             {
                 i = 0;
+                
                 target = carTarget[i].gameObject.GetComponent<PathFollower>();
+                
                 target.isTarget = true;
+                
                 m_clearShot.LookAt = carTarget[i].transform;
                 followCamera.LookAt = carTarget[i].transform;
                 followCamera.Follow = carTarget[i].transform;
@@ -39,16 +46,15 @@ public class CameraFollow : MonoBehaviour
             else
             {
                 i++;
+                
                 target = carTarget[i].gameObject.GetComponent<PathFollower>();
+                
                 target.isTarget = true;
+                
                 m_clearShot.LookAt = carTarget[i].transform;
                 followCamera.LookAt = carTarget[i].transform;
                 followCamera.Follow = carTarget[i].transform;
             }
         }
-    }
-    void LateUpdate()
-    {
-      
     }
 }
