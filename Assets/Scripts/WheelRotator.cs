@@ -13,13 +13,11 @@ public class WheelRotator : MonoBehaviour
     public float wheelSpeed = 20f;
     PathFollower pathRef;
 
-    // Start is called before the first frame update
     void Start()
     {
         pathRef = gameObject.GetComponent<PathFollower>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (pathRef.readyToGo == true)
