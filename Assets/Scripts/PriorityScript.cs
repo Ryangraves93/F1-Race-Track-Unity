@@ -8,10 +8,12 @@ public class PriorityScript : MonoBehaviour
 {
 
     public GameObject camRef;
+    
     CinemachineVirtualCamera cam;
     public CinemachineVirtualCamera followCam;
+    
     PathFollower target;
-    // Start is called before the first frame update
+    
     void Start()
     {
         cam = camRef.GetComponent<CinemachineVirtualCamera>();
@@ -23,14 +25,17 @@ public class PriorityScript : MonoBehaviour
         if (other.CompareTag("Car") && other.GetComponent<PathFollower>().isTarget == true)
         {
             followCam.gameObject.SetActive(false);
+            
             cam.gameObject.SetActive(true);
         }
     }
+    
      void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Car"))
         {
             followCam.gameObject.SetActive(true);
+            
             cam.gameObject.SetActive(false);
         }
     }
