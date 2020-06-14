@@ -23,6 +23,7 @@ public class pitStopController : MonoBehaviour
         wheelPositions = new Transform[5];
         lapController = lapControllerRef.GetComponent<LapController>(); //Assign the lapcontroller
     }
+    
      void OnTriggerEnter(Collider other) //Trigger to have the car stop for a pitstop
     {
         if (other.CompareTag("Car"))//Checks if the collision is a car
@@ -32,8 +33,9 @@ public class pitStopController : MonoBehaviour
             if (other.gameObject.GetComponent<PathFollower>().pitstopLap == true) //If the car is on a pitstoplap, will trigger a function to slow down the car
             {
                 m_carToCheck = other.GetComponent<PathFollower>();//Assigns the carToCheck variable to PathFollower script of the collided car
-                Debug.Log(m_carToCheck.staionary);
+                
                 m_carToCheck.m_slowingDown = true;
+                
                 lapController.carHasPitstopped = true;
             }
         }
@@ -43,7 +45,6 @@ public class pitStopController : MonoBehaviour
     {
         if (m_carToCheck != null)
         {
-            Debug.Log(m_carToCheck.staionary);
             if (m_carToCheck.staionary)
             {
                 AssignWheels();
